@@ -1,0 +1,138 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taqwae Youth Organization</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #0d1117;
+      color: #f1c40f;
+    }
+    header {
+      background-color: #000;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      max-height: 100px;
+      margin-bottom: 10px;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: #f1c40f;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .lang-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #f1c40f;
+      color: #000;
+      border: none;
+      padding: 6px 12px;
+      cursor: pointer;
+      border-radius: 5px;
+      z-index: 1000;
+    }
+    section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .gallery img {
+      max-width: 90%;
+      height: auto;
+      border: 8px solid #f1c40f;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0 0 20px #f1c40f66;
+    }
+    .caption {
+      margin-top: 10px;
+      font-size: 1.1em;
+      color: #fff;
+    }
+    footer {
+      background-color: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <button class="lang-toggle" onclick="toggleLanguage()">বাংলা</button>
+  <header>
+    <img src="logo.png" alt="Taqwae Youth Organization Logo">
+    <h1 id="title">Taqwae Youth Organization</h1>
+    <nav>
+      <a href="#home" id="home">Home</a>
+      <a href="#about" id="about">About Us</a>
+      <a href="#activities" id="activities">Activities</a>
+      <a href="#membership" id="membership">Membership</a>
+      <a href="#gallery" id="gallery">Gallery</a>
+      <a href="#contact" id="contact">Contact</a>
+    </nav>
+  </header>  <section>
+    <h2 id="welcome">Welcome to our youth organization!</h2>
+    <p id="desc">We are dedicated to moral, educational, and social development.</p>
+  </section>  <section class="gallery" id="gallery">
+    <h2>Our Team</h2>
+    <img src="group-photo.jpg" alt="Taqwae Youth Team">
+    <div class="caption">Taqwae Youth Organization Team - 2025</div>
+  </section>  <footer>
+    <p>&copy; 2025 Taqwae Youth Organization</p>
+    <p>Email: <a href="mailto:taqwaeyouthorganization@gmail.com" style="color: #f1c40f;">taqwaeyouthorganization@gmail.com</a></p>
+  </footer>  <script>
+    const content = {
+      en: {
+        title: "Taqwae Youth Organization",
+        home: "Home",
+        about: "About Us",
+        activities: "Activities",
+        membership: "Membership",
+        gallery: "Gallery",
+        contact: "Contact",
+        welcome: "Welcome to our youth organization!",
+        desc: "We are dedicated to moral, educational, and social development."
+      },
+      bn: {
+        title: "তাকওয়ায়ে তরুণ সংগঠন",
+        home: "হোম",
+        about: "আমাদের সম্পর্কে",
+        activities: "কার্যক্রম",
+        membership: "সদস্যপদ",
+        gallery: "ছবি গ্যালারি",
+        contact: "যোগাযোগ",
+        welcome: "আমাদের তরুণ সংগঠনে স্বাগতম!",
+        desc: "আমরা নৈতিক, শিক্ষামূলক এবং সামাজিক উন্নয়নে কাজ করি।"
+      }
+    };
+
+    let currentLang = 'en';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'bn' : 'en';
+      const lang = content[currentLang];
+      document.getElementById('title').innerText = lang.title;
+      document.getElementById('home').innerText = lang.home;
+      document.getElementById('about').innerText = lang.about;
+      document.getElementById('activities').innerText = lang.activities;
+      document.getElementById('membership').innerText = lang.membership;
+      document.getElementById('gallery').innerText = lang.gallery;
+      document.getElementById('contact').innerText = lang.contact;
+      document.getElementById('welcome').innerText = lang.welcome;
+      document.getElementById('desc').innerText = lang.desc;
+      document.querySelector('.lang-toggle').innerText = currentLang === 'en' ? 'বাংলা' : 'English';
+    }
+  </script></body>
+</html>
